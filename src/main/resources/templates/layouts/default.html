@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <!-- 引入样式 -->
+<!--    <link rel="stylesheet" th:href="@{'/element-ui/index.css'}">-->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
+    <script type="text/javascript" th:src="@{'/commons/lodash.min.js'}"></script>
+    <script type="text/javascript" th:src="@{'/commons/axios.min.js'}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="https://unpkg.com/wangeditor/release/wangEditor.min.js"></script>
+
+    <!-- vue.js一定要在element-ui前引入 -->
+<!--    <script type="text/javascript" th:src="@{'/commons/vue.js'}"></script>-->
+<!--    <script type="text/javascript" th:src="@{'/element-ui/index.js'}"></script>-->
+<!--    <script type="text/javascript" th:src="@{'/commons/wangEditor.min.js'}"></script>-->
+
+
+    <script type="text/javascript" th:src="@{'/commons/commons.js'}"></script>
+    <script type="text/javascript" th:inline="javascript">
+        var ctxPath = /*[[@{/}]]*/ '';
+        ctxPath = _.endsWith(ctxPath, '/') ? ctxPath.substring(0, ctxPath.length - 1) : ctxPath;
+    </script>
+</head>
+<body>
+<div id="app" layout:fragment="content" v-cloak>
+</div>
+<div layout:fragment="footer">
+</div>
+</body>
+</html>
